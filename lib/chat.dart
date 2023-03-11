@@ -1,15 +1,9 @@
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'widgets/fieldtext.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
 class ChatMessage {
@@ -27,10 +21,10 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   List<ChatMessage> _messages = [];
-
+  int _selectedIndex = 0;
   final chatGPT = OpenAI.instance.build(
       token: "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",
-      baseOption: HttpSetup(receiveTimeout: 60000));
+      baseOption: HttpSetup(receiveTimeout: const Duration (seconds: 6)));
 
   late stt.SpeechToText _speech;
   bool _isListening = false;
@@ -47,10 +41,21 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {});
   }
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Chat to GPT!")),
+        backgroundColor: kgrey,
+        elevation: 1,
+      ),
+
       backgroundColor: kgrey,
       body: Center(
         child: SingleChildScrollView(
@@ -78,8 +83,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: (_messages[index].messageType == "receiver"
-                              ? Colors.grey.shade200
-                              : Colors.blue[200]),
+                              ? kwhite
+                              : kgreen),
                         ),
                         padding: EdgeInsets.all(16),
                         child: Text(
@@ -95,6 +100,19 @@ class _ChatScreenState extends State<ChatScreen> {
                 height: 50,
               ),
               //password
+
+
+              SizedBox(
+                height: 60,
+              ),
+              //button go
+              // Center(
+              //   child: GestureDetector(
+              //     onTapDown: startListening,
+              //     onTapUp: stopListening,
+              //     child: Image.asset('assets/png/voice.png', width: 100),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Fieldtext(
@@ -123,22 +141,52 @@ class _ChatScreenState extends State<ChatScreen> {
                   // },
                 ),
               ),
-
-              SizedBox(
-                height: 60,
-              ),
-              //button go
-              Center(
-                child: GestureDetector(
-                  onTapDown: startListening,
-                  onTapUp: stopListening,
-                  child: Image.asset('assets/png/voice.png', width: 100),
-                ),
-              ),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: Container(
+        height: 100,
+        color: kgrey,
+        child: InkWell(
+          onTapDown: startListening,
+          onTapUp: stopListening,
+          child: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Icon(
+              Icons.mic_none,
+              color: kwhite,
+            size: 25,
+            ),
+          ),
+        ),
+      ),
+
+
+      // BottomNavigationBar(items:[
+      //   BottomNavigationBarItem(
+      //     icon: Icon(Icons.mic_none_rounded, color: kgrey,),
+      //     backgroundColor: kwhite,
+      //     activeIcon: Icon(Icons.mic, color: kgreen,),
+      //     label: 'Start talking',
+      //   ),
+      //   BottomNavigationBarItem(
+      //     icon: Icon(Icons.mic_none_rounded, color: kgrey,),
+      //     backgroundColor: kwhite,
+      //     activeIcon: Icon(Icons.mic, color: kgreen,),
+      //     label: 'Start talking',
+      //   ),
+      // ],
+      //   currentIndex: _selectedIndex,
+      //   selectedItemColor: kgreen,
+      //   onTap: _onItemTapped,
+      // ),
+
+      // onTapDown: startListening,
+      // onTapUp: stopListening,
+      // child: Image.asset('assets/png/voice.png', width: 100),
+
+
     );
   }
 
@@ -199,13 +247,13 @@ class _ChatScreenState extends State<ChatScreen> {
     _speech.stop();
     
     if (_text.isNotEmpty) {
-      final request = CompleteText(prompt: _text, model: kTranslateModelV3);
-      final response = await chatGPT!.onCompleteText(request: request);
+      final request = ChatCompleteText(messages: [Map.of({"role":"user","content":_text})], model: kTextDavinci3);
+      final response = await chatGPT.onChatCompletion(request: request);
       setState(() {
         _messages = [
           ..._messages,
           ChatMessage(
-              messageContent: response!.choices[0].text,
+              messageContent: response!.choices[0].message.content,
               messageType: "receiver")
         ];
           _text = "";

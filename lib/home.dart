@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:junction/inbox.dart';
+import 'package:junction/smartpod.dart';
 import 'constants.dart';
 import 'chat.dart';
 import 'widgets/fieldtext.dart';
@@ -20,68 +22,90 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: kgrey,
         elevation: 0,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [            Center(
-            child: 
-            GestureDetector(
-               onTap: () {
-                Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChatScreen()),
-                  );
-               },
-            child:Image.asset(
-              'assets/png/voice.png',
-            ),
-            )
-            ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children:
-        [
-          Column(
-            children: [
-              Center(
-                  child: Image.asset(
-                    'assets/png/mail.png',
-                  )),
-              Center(
-                child:Text(
-                  'Mail Assistant',
-                  style: GoogleFonts.lato(
-                    textStyle: const TextStyle(
-                        color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [            Center(
+                child:
+                GestureDetector(
+                   onTap: () {
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                      );
+                   },
+                child:Image.asset(
+                  'assets/png/voice.png',
                 ),
-              )
-            ],
-          ),
-          SizedBox(width: 70,),
-          Column(
-            children: [
-              Center(
-                  child: Image.asset(
-                    'assets/png/pod.png',
-                    fit: BoxFit.cover,
-                  )
+                )
+                ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children:
+            [
+              GestureDetector(
+                onTap: () {
+    Navigator.of(context).push(
+    MaterialPageRoute(
+    builder: (context) => Inbox (),
+    ),
+    );
+    },
+                child: Column(
+                  children: [
+                    Center(
+                        child: Image.asset(
+                          'assets/png/mail.png',
+                        )),
+                    Center(
+                      child:Text(
+                        'Mail Assistant',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              Center(
-                child:Text(
-                  'Smart Pod',
-                  style: GoogleFonts.lato(
-                    textStyle: const TextStyle(
-                        color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
+              SizedBox(width: 70,),
+              GestureDetector(
+                  onTap: () {
+    Navigator.of(context).push(
+    MaterialPageRoute(
+    builder: (context) => SmartPod (),
+    ),
+    );
+    },
+                child: Column(
+                  children: [
+                    Center(
+                        child: Image.asset(
+                          'assets/png/pod.png',
+                          fit: BoxFit.cover,
+                        )
+                    ),
+                    Center(
+                      child:Text(
+                        'Smart Pod',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-              )
+              ),
+
+            ],),
             ],
           ),
-
-        ],),
-        ],
+        ),
       ),
     );
   }

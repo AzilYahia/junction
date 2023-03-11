@@ -61,7 +61,7 @@ class Fieldtext extends StatelessWidget {
               ),
             ),
             isDense: true,
-            contentPadding: const EdgeInsets.fromLTRB(20.28, 18, 10, 18),
+            contentPadding: const EdgeInsets.fromLTRB(20.28, 15, 10, 15),
           ),
           cursorColor: kgreen,
         ),

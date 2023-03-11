@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'chat.dart';
 import 'widgets/fieldtext.dart';
 import 'widgets/newscard.dart';
 class HomePage extends StatefulWidget {
@@ -24,9 +24,19 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [            Center(
-            child: Image.asset(
+            child: 
+            GestureDetector(
+               onTap: () {
+                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ChatScreen()),
+                  );
+               },
+            child:Image.asset(
               'assets/png/voice.png',
-            )),
+            ),
+            )
+            ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

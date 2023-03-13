@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:junction/editProfile.dart';
 import 'package:junction/inbox.dart';
 import 'package:junction/inboxdetails.dart';
 import 'package:junction/newPod.dart';
 import 'package:junction/smartpod.dart';
+import 'package:junction/testaudio.dart';
 import 'constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:  FirstPage(),
+      home:  AudioTest(),
     );
   }
 }
@@ -39,62 +41,118 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-backgroundColor: kgrey,
-      body: SingleChildScrollView(
-        child: Center(
+backgroundColor: Color(0xFFF5F5F5),
+      body: Center(
 
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                // SvgPicture.asset('assets/svg/logolow.svg'),
-                Center(child: Image.asset('assets/png/loglow.png',)),
-
-                SizedBox(height: 100),
-                Padding(
-                  padding: const EdgeInsets.only(left: 50),                child: Text(
-                    'Welcome to your',
-                    style: GoogleFonts.lato(
-                      textStyle: TextStyle(color: kwhite, fontSize: 24, fontWeight: FontWeight.w300),
-                    ),
-                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Center(
+                child: Text(
+                'A - GPT',
+                style: GoogleFonts.lato(
+                  textStyle: TextStyle(color: kbluelikanwhite, fontSize: 75, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height:12,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 50),                child: Text(
-                    'Virtual Assistant',
-                    style: GoogleFonts.lato(
-                      textStyle: TextStyle(color: kwhite, fontSize: 36, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                SizedBox(height:100,),
+              ),
+              ),
 
-                Center(
-                  child: TextButton(onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen (),
-                      ),
-                    );
-                  },
-                    child: Container(
-                    height: 64,
-                    width: 339,
+              Center(
+                child: TextButton(onPressed: () {
+                },
+                  child: Container(
+                    height: 38,
+                    width: 140,
                     decoration:  BoxDecoration(
-                        color: kgreen,
-                        borderRadius: BorderRadius.all(Radius.circular(55))),
+                        color: knewred,
+                        borderRadius: BorderRadius.all(Radius.circular(13))),
                     child: Center(
-                        child: Text("Get Started",style: GoogleFonts.poppins(
-                            color: kwhite,
-                            fontSize: 20,
+                        child: Text("Assistant",style: GoogleFonts.poppins(
+                            color: kwhitelikangrey,
+                            fontSize: 24,
                             fontWeight: FontWeight.w500),)),
                   ),),
-                ),
-              ],
-            ),
+              ),
+
+              // Center(child: SvgPicture.asset('assets/svg/robot.svg',)),
+              Center(child: Image.asset('assets/png/robot.png',scale: 1.2,)),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: TextButton(onPressed: () {
+                    },
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration:  BoxDecoration(
+                            color: klightgrey,
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Center(
+                            child: SvgPicture.asset(
+                              'assets/svg/google.svg',
+                              height: 20,
+                              width: 20
+                            )),
+                      ),),
+                  ),
+                  Center(
+                    child: TextButton(onPressed: () {
+                    },
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration:  BoxDecoration(
+                            color: klightgrey,
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Center(
+                            child: SvgPicture.asset(
+                              'assets/svg/apple.svg',
+                              height: 20,
+                              width: 20
+                            )),
+                      ),),
+                  ),
+                  Center(
+                    child: TextButton(onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen (),
+                        ),
+                      );
+                    },
+                      child: Container(
+                        height: 50,
+                        width: 180,
+                        decoration:  BoxDecoration(
+                            color: knewred,
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                                child: Text("Get Started",style: GoogleFonts.poppins(
+                                    color: kwhitelikangrey,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w500),)),
+                            SizedBox(width: 10,),
+                            Icon(Icons.arrow_forward_ios_rounded,color: kwhitelikangrey,)
+                          ],
+                        ),
+                      ),),
+                  ),
+
+
+                ],
+              ),
+
+
+
+
+            ],
           ),
-      ),
+        ),
 
 
 

@@ -26,10 +26,10 @@ class _InboxState extends State<Inbox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kgrey,
+        backgroundColor: kwhitelikangrey,
         appBar: AppBar(
           title: Center(child: Text("Mail Assistant")),
-          backgroundColor: kgrey,
+          backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -45,14 +45,14 @@ class _InboxState extends State<Inbox> {
                         'Inbox',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              color: kwhite,
+                              color: kbluelikanwhite,
                               fontSize: 30,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
                     ],
                   ),
-                  Icon(Icons.search, color: kwhite, size: 40),
+                  Icon(Icons.search, color: kbluelikanwhite, size: 40),
                 ],
               ),
             ),
@@ -64,23 +64,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -96,23 +96,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -128,23 +128,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -160,23 +160,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -192,23 +192,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -224,23 +224,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),
@@ -256,23 +256,23 @@ class _InboxState extends State<Inbox> {
                   ),
                 );
               },
-              child: Container(color: kgrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
+              child: Container(color: kwhitelikangrey, height:MediaQuery.of(context).size.width / 4 ,width: MediaQuery.of(context).size.width,
                 child: Card(
                   color: kgreylow,
                   child: ListTile(
                     tileColor: kgreylow,
 
-                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                    leading: Container(height: 15, width: 15,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
 
                     title: Text('Email Subject', style: GoogleFonts.lato(
-                      textStyle: const TextStyle(color: kwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
+                      textStyle: const TextStyle(color: kbluelikanwhite, fontSize: 20, fontWeight: FontWeight.w500),),),
                     subtitle: Text(
                       'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par acciden.....',
                       maxLines: 3,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             overflow: TextOverflow.ellipsis,
-                            color: kwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
+                            color: kbluelikanwhite, fontSize: 12, fontWeight: FontWeight.w400),),),
                     isThreeLine: true,
                   ),
                 ),

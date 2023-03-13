@@ -36,7 +36,7 @@ class Fieldtext extends StatelessWidget {
           keyboardType: keyboardtype,
           decoration: InputDecoration(
             filled: true, //<-- SEE HERE
-            fillColor: kwhite,
+            fillColor: kbluelikanwhite,
             suffixIcon: inp,
             prefixIcon: prefix,
             // IconButton(
@@ -45,25 +45,25 @@ class Fieldtext extends StatelessWidget {
             // ),
             hintText: hint,
             hintStyle: GoogleFonts.poppins(
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.w300,
                 fontSize: 16,
-                color:  kgrey),
+                color:  kwhitelikangrey),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: const BorderSide(
-                color: kgrey,
+                color: kwhitelikangrey,
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: const BorderSide(
-                color: kwhite,
+                color: kbluelikanwhite,
               ),
             ),
             isDense: true,
             contentPadding: const EdgeInsets.fromLTRB(20.28, 15, 10, 15),
           ),
-          cursorColor: kgreen,
+          cursorColor: knewred,
         ),
       ],
     );

@@ -42,19 +42,19 @@ class NewsCard extends StatelessWidget {
                     children: const [
                       Text(
                         "Politics",
-                        style: TextStyle(color: kgreen),
+                        style: TextStyle(color: knewred),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 16 / 2),
                         child: CircleAvatar(
                           radius: 3,
-                          backgroundColor: kwhite,
+                          backgroundColor: kbluelikanwhite,
                         ),
                       ),
                       Text(
                         "3m ago",
-                        style: TextStyle(color: kgrey),
+                        style: TextStyle(color: kwhitelikangrey),
                       )
                     ],
                   )

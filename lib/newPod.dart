@@ -24,14 +24,14 @@ class _NewPodState extends State<NewPod> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kgrey,
+        backgroundColor: kwhitelikangrey,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: Icon(Icons.arrow_back_ios),
           ),
           title: Center(child: Text("Add new Pod")),
-          backgroundColor: kgrey,
+          backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -50,7 +50,7 @@ class _NewPodState extends State<NewPod> {
                 'Name Pod',
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
-                      color: kwhite,
+                      color: kbluelikanwhite,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
@@ -88,7 +88,7 @@ class _NewPodState extends State<NewPod> {
                     'ID Pod',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          color: kwhite,
+                          color: kbluelikanwhite,
                           fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),
@@ -127,7 +127,7 @@ class _NewPodState extends State<NewPod> {
                     'Key Pod',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          color: kwhite,
+                          color: kbluelikanwhite,
                           fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),
@@ -172,11 +172,11 @@ class _NewPodState extends State<NewPod> {
                       height: 64,
                       width: 300,
                       decoration:  BoxDecoration(
-                          color: kgreen,
+                          color: knewred,
                           borderRadius: BorderRadius.all(Radius.circular(55))),
                       child: Center(
                           child: Text("Add",style: GoogleFonts.poppins(
-                              color: kwhite,
+                              color: kbluelikanwhite,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),)),
                     ),

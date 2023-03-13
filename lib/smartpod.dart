@@ -26,14 +26,14 @@ class _SmartPodState extends State<SmartPod> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kgrey,
+        backgroundColor: kwhitelikangrey,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: Icon(Icons.arrow_back_ios),
           ),
           title: Center(child: Text("Smart Pod")),
-          backgroundColor: kgrey,
+          backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -61,7 +61,7 @@ class _SmartPodState extends State<SmartPod> {
                           'Home Pod',
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
-                                color: kwhite,
+                                color: kbluelikanwhite,
                                 fontSize: 36,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -73,7 +73,7 @@ class _SmartPodState extends State<SmartPod> {
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
-                                    color: kwhite,
+                                    color: kbluelikanwhite,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -83,7 +83,7 @@ class _SmartPodState extends State<SmartPod> {
                               height: 15,
                               width: 15,
                               decoration: BoxDecoration(
-                                color: kgreen,
+                                color: knewred,
                                 shape: BoxShape.circle,
                               ),
                             ),
@@ -97,7 +97,7 @@ class _SmartPodState extends State<SmartPod> {
                               height: 38,
                               width: 120,
                               decoration:  BoxDecoration(
-                                  color: kwhite,
+                                  color: kbluelikanwhite,
                                   borderRadius: BorderRadius.all(Radius.circular(13))),
                               child: Center(
                                   child: Text("Disconnect",style: GoogleFonts.poppins(
@@ -131,7 +131,7 @@ class _SmartPodState extends State<SmartPod> {
                           'Office Pod',
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
-                                color: kwhite,
+                                color: kbluelikanwhite,
                                 fontSize: 36,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -143,7 +143,7 @@ class _SmartPodState extends State<SmartPod> {
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
-                                    color: kwhite,
+                                    color: kbluelikanwhite,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -167,11 +167,11 @@ class _SmartPodState extends State<SmartPod> {
                               height: 38,
                               width: 120,
                               decoration:  BoxDecoration(
-                                  color: kwhite,
+                                  color: kbluelikanwhite,
                                   borderRadius: BorderRadius.all(Radius.circular(13))),
                               child: Center(
                                   child: Text("Connect",style: GoogleFonts.poppins(
-                                      color: kgreen,
+                                      color: knewred,
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500),)),
                             ),),
@@ -199,11 +199,11 @@ class _SmartPodState extends State<SmartPod> {
                     height: 64,
                     width: 300,
                     decoration:  BoxDecoration(
-                        color: kgreen,
+                        color: knewred,
                         borderRadius: BorderRadius.all(Radius.circular(55))),
                     child: Center(
                         child: Text("Add a new pod",style: GoogleFonts.poppins(
-                            color: kwhite,
+                            color: kbluelikanwhite,
                             fontSize: 20,
                             fontWeight: FontWeight.w500),)),
                   ),

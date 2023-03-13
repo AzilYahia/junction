@@ -52,11 +52,11 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Chat to GPT!")),
-        backgroundColor: kgrey,
+        backgroundColor: kwhitelikangrey,
         elevation: 1,
       ),
 
-      backgroundColor: kgrey,
+      backgroundColor: kwhitelikangrey,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -83,8 +83,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: (_messages[index].messageType == "receiver"
-                              ? kwhite
-                              : kgreen),
+                              ? kbluelikanwhite
+                              : knewred),
                         ),
                         padding: EdgeInsets.all(16),
                         child: Text(
@@ -147,7 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       bottomNavigationBar: Container(
         height: 100,
-        color: kgrey,
+        color: kwhitelikangrey,
         child: InkWell(
           onTapDown: startListening,
           onTapUp: stopListening,
@@ -155,7 +155,7 @@ class _ChatScreenState extends State<ChatScreen> {
             padding: EdgeInsets.only(top: 8.0),
             child: Icon(
               Icons.mic_none,
-              color: kwhite,
+              color: kbluelikanwhite,
             size: 25,
             ),
           ),

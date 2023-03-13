@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: kgrey,
+      backgroundColor: kwhitelikangrey,
       appBar: AppBar(title: Center(child: Text("Vocal Assistant")),
-      backgroundColor: kgrey,
+      backgroundColor: kwhitelikangrey,
         elevation: 0,
       ),
       body: Center(
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                         'Mail Assistant',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
+                              color: kbluelikanwhite, fontSize: 16, fontWeight: FontWeight.w500),
                         ),
                       ),
                     )
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                         'Smart Pod',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              color: kwhite, fontSize: 16, fontWeight: FontWeight.w500),
+                              color: kbluelikanwhite, fontSize: 16, fontWeight: FontWeight.w500),
                         ),
                       ),
                     )

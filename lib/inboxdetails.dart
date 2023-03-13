@@ -27,10 +27,10 @@ class _InboxDetailsState extends State<InboxDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kgrey,
+        backgroundColor: kwhitelikangrey,
         appBar: AppBar(
           title: Center(child: Text("Vocal Assistant")),
-          backgroundColor: kgrey,
+          backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -52,14 +52,14 @@ class _InboxDetailsState extends State<InboxDetails> {
                               'Inbox',
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
-                                    color: kwhite,
+                                    color: kbluelikanwhite,
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
                           ],
                         ),
-                        Icon(Icons.search, color: kwhite, size: 40),
+                        Icon(Icons.search, color: kbluelikanwhite, size: 40),
                       ],
                     ),
                   ),
@@ -68,7 +68,7 @@ class _InboxDetailsState extends State<InboxDetails> {
                   Padding(
                     padding: const EdgeInsets.only(top: 100),
                     child: Container(
-                      color: kgrey,
+                      color: kwhitelikangrey,
                       height: MediaQuery.of(context).size.width ,
                       width: MediaQuery.of(context).size.width,
                       child: Column(
@@ -81,14 +81,14 @@ class _InboxDetailsState extends State<InboxDetails> {
                             // crossAxisAlignment: CrossAxisAlignment.center,
                             // mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                            Container(height: 25, width: 25,decoration:  BoxDecoration(color: kgreen, shape: BoxShape.circle,),),
+                            Container(height: 25, width: 25,decoration:  BoxDecoration(color: knewred, shape: BoxShape.circle,),),
                       SizedBox(width: 20,),
 
                       Text(
                                'Email Subject',
                                 style: GoogleFonts.lato(
                                   textStyle: const TextStyle(
-                                      color: kwhite,
+                                      color: kbluelikanwhite,
                                       fontSize: 40,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -101,7 +101,7 @@ class _InboxDetailsState extends State<InboxDetails> {
                             'de nombreux sites qui nen sont encore quà leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire dy rajouter de petits clins doeil, voire des phrases embarassantes)',
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
-                                  color: kwhite,
+                                  color: kbluelikanwhite,
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             ),
@@ -199,11 +199,11 @@ class _InboxDetailsState extends State<InboxDetails> {
                         height: 64,
                         width: 300,
                         decoration:  BoxDecoration(
-                            color: kgreen,
+                            color: knewred,
                             borderRadius: BorderRadius.all(Radius.circular(55))),
                         child: Center(
                             child: Text("Suggest Reply",style: GoogleFonts.poppins(
-                                color: kwhite,
+                                color: kbluelikanwhite,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500),)),
                       ),),

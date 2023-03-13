@@ -11,21 +11,42 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kgrey,
+      backgroundColor: kwhitelikangrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Center(
-                child: Image.asset(
-              'assets/png/loglow.png',
-            )),
+              child: Text(
+                'A - GPT',
+                style: GoogleFonts.lato(
+                  textStyle: TextStyle(color: kbluelikanwhite, fontSize: 75, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+
+            Center(
+              child: TextButton(onPressed: () {
+              },
+                child: Container(
+                  height: 38,
+                  width: 140,
+                  decoration:  BoxDecoration(
+                      color: knewred,
+                      borderRadius: BorderRadius.all(Radius.circular(13))),
+                  child: Center(
+                      child: Text("Assistant",style: GoogleFonts.poppins(
+                          color: kwhitelikangrey,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500),)),
+                ),),
+            ),
             SizedBox(height: 50,),
             Text(
-              'Log In',
+              'Welcome Back !',
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
-                    color: kwhite, fontSize: 64, fontWeight: FontWeight.bold),
+                    color: klightblue, fontSize: 25, fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(height: 50,),
@@ -33,6 +54,7 @@ class LoginScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: const Fieldtext(
+                prefix: Icon(Icons.email, color: Colors.white),
                 hint: "email",
                 // controller: passwordController,
                 // obsec: controller.isVisible ? true : false,
@@ -65,6 +87,7 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: const Fieldtext(
                 hint: "password",
+                prefix: Icon(Icons.lock, color: Colors.white),
                 // controller: passwordController,
                 // obsec: controller.isVisible ? true : false,
 
@@ -104,7 +127,7 @@ class LoginScreen extends StatelessWidget {
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
-                            color: kwhite),
+                            color: kbluelikanwhite),
                       ))),
             ),
             SizedBox(height: 60,),
@@ -130,11 +153,11 @@ class LoginScreen extends StatelessWidget {
                     height: 64,
                     width: 339,
                     decoration:  BoxDecoration(
-                        color: kgreen,
+                        color: knewred,
                         borderRadius: BorderRadius.all(Radius.circular(55))),
                     child: Center(
                         child: Text("Go",style: GoogleFonts.poppins(
-                            color: kwhite,
+                            color: kwhitelikangrey,
                             fontSize: 20,
                             fontWeight: FontWeight.w500),)),
                   ),
@@ -151,7 +174,7 @@ class LoginScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           fontSize: 13,
-                          color: kwhite),
+                          color: kbluelikanwhite),
                     ))),
 
           ],

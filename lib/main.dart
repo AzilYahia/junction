@@ -1,19 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:junction/editProfile.dart';
 import 'package:junction/inbox.dart';
 import 'package:junction/inboxdetails.dart';
 import 'package:junction/newPod.dart';
 import 'package:junction/smartpod.dart';
-import 'package:junction/testaudio.dart';
 import 'constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login.dart';
 import 'home.dart';
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp( MyApp());
 }
 
+
+/*
+
+To initialise Firebase, call Firebase.initializeApp from the firebase_core package with the configuration from your new firebase_options.dart file:
+
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+// ...
+
+await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+
+ */
 class MyApp extends StatelessWidget {
    MyApp({Key? key}) : super(key: key);
 
@@ -81,7 +101,34 @@ backgroundColor: Color(0xFFF5F5F5),
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(
-                    child: TextButton(onPressed: () {
+                    child: TextButton(onPressed: () async {
+                      Future<UserCredential> signInWithGoogle() async {
+                        // Trigger the authentication flow
+                        final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+                        // Obtain the auth details from the request
+                        final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+                        // Create a new credential
+                        final credential = GoogleAuthProvider.credential(
+                          accessToken: googleAuth?.accessToken,
+                          idToken: googleAuth?.idToken,
+                        );
+                        // Once signed in, return the UserCredential
+                        return await FirebaseAuth.instance.signInWithCredential(credential);
+                      }
+                      await signInWithGoogle();
+
+                      if(mounted){ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Center(child: Text("Welcome back!",style: GoogleFonts.poppins(
+    color: kwhitelikangrey,
+    fontSize: 24,
+    fontWeight: FontWeight.w500))),behavior: SnackBarBehavior.floating,
+    margin: EdgeInsets.only(bottom: 400.0),backgroundColor: Colors.green));}
+                      else{
+                        ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Center(child: Text("Welcome back!",style: GoogleFonts.poppins(
+                            color: kred,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500))),behavior: SnackBarBehavior.floating,
+                            margin: EdgeInsets.only(bottom: 400.0),backgroundColor: Colors.green));
+                      }
                     },
                       child: Container(
                         height: 50,

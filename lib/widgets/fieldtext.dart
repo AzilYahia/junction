@@ -29,6 +29,7 @@ class Fieldtext extends StatelessWidget {
     return Column(
       children: [
         TextFormField(
+          style: TextStyle(color: kwhitelikangrey)  ,
           controller: controller,
           onSaved: onSave,
           validator: validator,

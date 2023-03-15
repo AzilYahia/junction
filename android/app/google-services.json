@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "497395028820",
+    "project_id": "a-gpt-c8c0a",
+    "storage_bucket": "a-gpt-c8c0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497395028820:android:a6a30faeb6846ad1246ec1",
+        "android_client_info": {
+          "package_name": "com.example.junction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497395028820-aam814sk9et7pq0croa3542n79tijabg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-6BefVmtHMoG-_brASInfkzvZ6UXc1D0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497395028820-aam814sk9et7pq0croa3542n79tijabg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "497395028820-96mn3optthas4g8eb28te1h6pcmqqf9v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.junction"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

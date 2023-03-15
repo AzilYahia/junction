@@ -5,6 +5,8 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+import 'package:audio_waveforms/audio_waveforms.dart';
+
 
 class ChatMessage {
   String messageContent;
@@ -100,6 +102,41 @@ class _ChatScreenState extends State<ChatScreen> {
                 height: 50,
               ),
               //password
+              Center(
+                child: AudioWaveforms(
+                  enableGesture: true,
+                  size: Size(
+                      MediaQuery.of(context).size.width / 2,
+                      50),
+                  recorderController: RecorderController(),
+                  waveStyle: const WaveStyle(
+                    waveColor: Colors.white,
+                    extendWaveform: true,
+                    showMiddleLine: false,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: const Color(0xFF1E1B26),
+                  ),
+                  padding: const EdgeInsets.only(left: 18),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 15),
+                ),
+              ),
+              Center(
+              child: AudioFileWaveforms(
+                  size: Size(MediaQuery.of(context).size.width, 100.0),
+                  playerController: PlayerController(),
+                  enableSeekGesture: true,
+                  waveformType: WaveformType.long,
+                  waveformData: [],
+                  playerWaveStyle: const PlayerWaveStyle(
+                      fixedWaveColor: Colors.white54,
+                      liveWaveColor: Colors.blueAccent,
+                      spacing: 6,
+                  ),
+              ),
+              ),
 
 
               SizedBox(

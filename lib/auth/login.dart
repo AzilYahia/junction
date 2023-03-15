@@ -1,32 +1,50 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:junction/home.dart';
-import 'constants.dart';
+import 'package:junction/auth/register.dart';
+import '../view/home.dart';
+import '../widgets/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'widgets/fieldtext.dart';
+import '../widgets/fieldtext.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
-class LoginScreen extends StatelessWidget {
-
-  String validationEmail =
-      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
-  final formkey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+class LoginScreen extends StatefulWidget {
 
   LoginScreen({Key? key}) : super(key: key);
 
   @override
-  Future<void> loginwithemail(
-      {required String email, required String password}) async {
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  String validationEmail =
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+
+  final formkey = GlobalKey<FormState>();
+
+  final emailController = TextEditingController();
+
+  final passwordController = TextEditingController();
+
+  bool isVisible = true;
+
+  Future<void> saveToken(String token) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('token', token);
+  }
+
+  visibility() {
+    isVisible = !isVisible;
+  }
+  Future<void> loginwithemail({required String email, required String password}) async {
     String? displayUserName = '';
     await FirebaseAuth.instance.
     signInWithEmailAndPassword(email: email, password: password).
     then((value) =>
     displayUserName = FirebaseAuth.instance.currentUser!.displayName);
   }
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kwhitelikangrey,
@@ -83,19 +101,7 @@ class LoginScreen extends StatelessWidget {
                     controller: emailController,
                     obsec: false,
 
-                    // obsec: controller.isVisible ? true : false,
 
-                    //   inp: controller.isVisible
-                    //   ? IconButton(
-                    //       icon: const Icon(Icons.visibility_off,
-                    //       color: Colors.black),
-                    //   onPressed: () => controller.visibility(),
-                    // )
-                    //     : IconButton(
-                    // icon: const Icon(Icons.visibility,
-                    // color: Colors.black),
-                    // onPressed: () => controller.visibility(),
-                    // ),
                     validator: (value) {
                       if (!RegExp(validationEmail).hasMatch(value!)) {
                         return "Email is invalid";
@@ -115,19 +121,19 @@ class LoginScreen extends StatelessWidget {
                     hint: "password",
                     prefix: Icon(Icons.lock, color: Colors.white),
                     controller: passwordController,
-                    // obsec: controller.isVisible ? true : false,
-
-                    //   inp: controller.isVisible
-                    //   ? IconButton(
-                    //       icon: const Icon(Icons.visibility_off,
-                    //       color: Colors.black),
-                    //   onPressed: () => controller.visibility(),
-                    // )
-                    //     : IconButton(
-                    // icon: const Icon(Icons.visibility,
-                    // color: Colors.black),
-                    // onPressed: () => controller.visibility(),
-                    // ),
+                    obsec: isVisible ? true : false,
+                    //
+                      inp: isVisible
+                      ? IconButton(
+                          icon: const Icon(Icons.visibility_off,
+                              color: kwhitelikangrey),
+                        onPressed: () => setState(() {visibility();}),
+                    )
+                        : IconButton(
+                    icon: const Icon(Icons.visibility,
+                    color: kwhitelikangrey),
+                        onPressed: () => setState(() {visibility();}),
+                    ),
                     validator: (value) {
                       if (value
                           .toString()
@@ -166,9 +172,9 @@ class LoginScreen extends StatelessWidget {
                       if (formkey.currentState!.validate()) {
                         String email = emailController.text.trim();
                         String password = passwordController.text.trim();
-                        try {
-                          await loginwithemail(
-                              email: email, password: password);
+                        String? tokeny = FirebaseAuth.instance.currentUser?.uid;
+                        try {await loginwithemail(email: email, password: password);
+                        saveToken(tokeny!);
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(duration: Duration(milliseconds: 500),
                               content: Center(child: Text(
                                   "Welcome back!", style: GoogleFonts.poppins(
@@ -179,6 +185,9 @@ class LoginScreen extends StatelessWidget {
                               margin: EdgeInsets.only(bottom: 400.0),
                               backgroundColor: Colors.green));
                         Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+
+
+
                         }
 
                         on FirebaseAuthException catch (e) {
@@ -204,6 +213,18 @@ class LoginScreen extends StatelessWidget {
                               backgroundColor: kred,));
                           }
                         }
+                        catch (e){
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(duration: Duration(milliseconds: 700),
+                            content: Center(child: Text(
+                            e.toString()
+                            , style: GoogleFonts.poppins(
+                                color: kwhitelikangrey,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500),)),
+                            behavior: SnackBarBehavior.floating,
+                            margin: EdgeInsets.only(bottom: 400.0),
+                            backgroundColor: kred,));
+                        }
                       }
                     },
                     child: Container(
@@ -226,7 +247,9 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: TextButton(
                         onPressed: () =>
-                        {},
+                        {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()))
+                        },
                         child: Text(
                           "Don't have an account?",
                           style: GoogleFonts.poppins(

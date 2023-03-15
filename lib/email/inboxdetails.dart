@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:junction/inbox.dart';
-import 'package:junction/login.dart';
-import 'constants.dart';
+import 'package:junction/email/inbox.dart';
+import 'package:junction/auth/login.dart';
+import '../widgets/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'widgets/fieldtext.dart';
+import '../widgets/fieldtext.dart';
 
 enum SampleItem { itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven,  itemEight }
 

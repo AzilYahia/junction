@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants.dart';
+import 'constants.dart';
 class Fieldtext extends StatelessWidget {
   final bool obsec;
   final String hint;
   final Widget? inp;
   final Widget? prefix;
   final Function(String?)? onSave;
+  final Function(String?)? onChange;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyboardtype;
 
   final TextEditingController? controller;
 
-  const Fieldtext(
+   Fieldtext(
       {Key? key,
+        this.onChange,
         this.obsec = true,
         this.hint = '',
         this.inp,
@@ -32,6 +34,7 @@ class Fieldtext extends StatelessWidget {
           style: TextStyle(color: kwhitelikangrey)  ,
           controller: controller,
           onSaved: onSave,
+          onChanged: onChange,
           validator: validator,
           obscureText: obsec,
           keyboardType: keyboardtype,

@@ -23,6 +23,11 @@ dependencies:
   firebase_core: ^2.7.1
   firebase_auth: ^4.2.10
   google_sign_in: ^6.0.2
+  cached_network_image: ^3.2.3
+  circular_bottom_navigation: ^2.3.0
+  shared_preferences: ^2.0.18
+  enough_mail: ^2.1.1
+  googleapis: ^10.1.0
 
 dev_dependencies:
   flutter_test:

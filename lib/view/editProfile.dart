@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:junction/home.dart';
-import 'constants.dart';
+import 'package:junction/view/home.dart';
+import '../widgets/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'widgets/fieldtext.dart';
+import '../widgets/fieldtext.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 
 class EditProfileScreen extends StatelessWidget {
@@ -41,10 +42,13 @@ class EditProfileScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 75,
                   backgroundColor: Colors.grey.shade200,
-                  child: CircleAvatar(
-                    radius: 70,
-                    backgroundImage: AssetImage('assets/images/default.png'),
+                  child: CachedNetworkImage(
+                    imageUrl: "http://via.placeholder.com/350x150",
+                    placeholder: (context, url) => CircularProgressIndicator(),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
+                    ),
+        ],
                 ),
                 Positioned(
                   bottom: 1,
@@ -76,8 +80,8 @@ class EditProfileScreen extends StatelessWidget {
                         ]),
                   ),
                 ),
-              ],
-            ),
+
+
             SizedBox(height: 30,),
 
             Container(
@@ -161,9 +165,9 @@ class EditProfileScreen extends StatelessWidget {
                 ),),
             ),
 
-          ],
-        ),
+      ]
       ),
+    )
     );
   }
 }

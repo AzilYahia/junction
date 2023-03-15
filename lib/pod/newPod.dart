@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'constants.dart';
-import 'widgets/fieldtext.dart';
+import '../widgets/constants.dart';
+import '../widgets/fieldtext.dart';
 
 class NewPod extends StatefulWidget {
   const NewPod({Key? key}) : super(key: key);
@@ -28,9 +28,13 @@ class _NewPodState extends State<NewPod> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_ios,color: kblue,),
           ),
-          title: Center(child: Text("Add new Pod")),
+          title: Text("Smart Pod",style: GoogleFonts.poppins(
+              color: kblue,
+              fontSize: 24,
+              fontWeight: FontWeight.bold),),
+          centerTitle: true,
           backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
@@ -56,7 +60,7 @@ class _NewPodState extends State<NewPod> {
                 ),
               ),
               SizedBox(height: 15,),
-              const Fieldtext(
+               Fieldtext(
                 hint: "Name",
 
                 // controller: passwordController,
@@ -94,7 +98,7 @@ class _NewPodState extends State<NewPod> {
                     ),
                   ),
                   SizedBox(height: 15,),
-                  const Fieldtext(
+                   Fieldtext(
                     hint: "ID Pod",
 
                     // controller: passwordController,
@@ -133,7 +137,7 @@ class _NewPodState extends State<NewPod> {
                     ),
                   ),
                   SizedBox(height: 15,),
-                  const Fieldtext(
+                   Fieldtext(
                     hint: "Key Pod",
 
                     // controller: passwordController,
@@ -176,7 +180,7 @@ class _NewPodState extends State<NewPod> {
                           borderRadius: BorderRadius.all(Radius.circular(55))),
                       child: Center(
                           child: Text("Add",style: GoogleFonts.poppins(
-                              color: kbluelikanwhite,
+                              color: kwhitelikangrey,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),)),
                     ),

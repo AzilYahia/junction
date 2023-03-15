@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:junction/newPod.dart';
-import 'constants.dart';
+import 'package:junction/pod/newPod.dart';
+import '../widgets/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'widgets/fieldtext.dart';
+import '../widgets/fieldtext.dart';
 
 class SmartPod extends StatefulWidget {
   const SmartPod({Key? key}) : super(key: key);
@@ -30,9 +30,13 @@ class _SmartPodState extends State<SmartPod> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_ios,color: kblue,),
           ),
-          title: Center(child: Text("Smart Pod")),
+          title: Text("Smart Pod",style: GoogleFonts.poppins(
+              color: kblue,
+              fontSize: 24,
+              fontWeight: FontWeight.bold),),
+          centerTitle: true,
           backgroundColor: kwhitelikangrey,
           elevation: 0,
         ),
@@ -45,7 +49,7 @@ class _SmartPodState extends State<SmartPod> {
 
 
             Container(
-              color: kgreylownoopacity,
+              color: kblue,
               height: MediaQuery.of(context).size.width / 2,
               width: MediaQuery.of(context).size.width,
               child: Padding(
@@ -61,7 +65,7 @@ class _SmartPodState extends State<SmartPod> {
                           'Home Pod',
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
-                                color: kbluelikanwhite,
+                                color: kwhitelikangrey,
                                 fontSize: 36,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -73,7 +77,77 @@ class _SmartPodState extends State<SmartPod> {
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
-                                    color: kbluelikanwhite,
+                                    color: kwhitelikangrey,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            Container(
+                              height: 15,
+                              width: 15,
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //
+                        Center(
+                          child: TextButton(onPressed: () {
+                          },
+                            child: Container(
+                              height: 38,
+                              width: 120,
+                              decoration:  BoxDecoration(
+                                  color: kwhitelikangrey,
+                                  borderRadius: BorderRadius.all(Radius.circular(13))),
+                              child: Center(
+                                  child: Text("Disconnect",style: GoogleFonts.poppins(
+                                      color: kblue,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500),)),
+                            ),),
+                        ),
+
+                        ],),
+                    Image.asset('assets/png/podtransparent.png',scale: 0.7,)
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 15,),
+            Container(
+              color: kgreylownoopacity,
+              height: MediaQuery.of(context).size.width / 2,
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.symmetric( horizontal: 35.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Office Pod',
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                color: kwhitelikangrey,
+                                fontSize: 36,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'Disconnected',
+                              style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                                    overflow: TextOverflow.ellipsis,
+                                    color: kwhitelikangrey,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -97,81 +171,11 @@ class _SmartPodState extends State<SmartPod> {
                               height: 38,
                               width: 120,
                               decoration:  BoxDecoration(
-                                  color: kbluelikanwhite,
-                                  borderRadius: BorderRadius.all(Radius.circular(13))),
-                              child: Center(
-                                  child: Text("Disconnect",style: GoogleFonts.poppins(
-                                      color: kred,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),)),
-                            ),),
-                        ),
-
-                        ],),
-                    Image.asset('assets/png/podtransparent.png',scale: 0.7,)
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              color: kgreylownoopacity,
-              height: MediaQuery.of(context).size.width / 2,
-              width: MediaQuery.of(context).size.width,
-              child: Padding(
-                padding: const EdgeInsets.symmetric( horizontal: 35.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Office Pod',
-                          style: GoogleFonts.lato(
-                            textStyle: const TextStyle(
-                                color: kbluelikanwhite,
-                                fontSize: 36,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Disconnected',
-                              style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                    overflow: TextOverflow.ellipsis,
-                                    color: kbluelikanwhite,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                            Container(
-                              height: 15,
-                              width: 15,
-                              decoration: BoxDecoration(
-                                color: kred,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                          ],
-                        ),
-                        //
-                        Center(
-                          child: TextButton(onPressed: () {
-                          },
-                            child: Container(
-                              height: 38,
-                              width: 120,
-                              decoration:  BoxDecoration(
-                                  color: kbluelikanwhite,
+                                  color: knewred,
                                   borderRadius: BorderRadius.all(Radius.circular(13))),
                               child: Center(
                                   child: Text("Connect",style: GoogleFonts.poppins(
-                                      color: knewred,
+                                      color: kwhitelikangrey,
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500),)),
                             ),),
@@ -203,7 +207,7 @@ class _SmartPodState extends State<SmartPod> {
                         borderRadius: BorderRadius.all(Radius.circular(55))),
                     child: Center(
                         child: Text("Add a new pod",style: GoogleFonts.poppins(
-                            color: kbluelikanwhite,
+                            color: kwhitelikangrey,
                             fontSize: 20,
                             fontWeight: FontWeight.w500),)),
                   ),

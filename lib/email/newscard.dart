@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../widgets/constants.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard({
